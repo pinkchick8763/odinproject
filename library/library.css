@@ -1,0 +1,50 @@
+body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: Arial;
+            padding: 20px;
+            background: skyblue;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 8px;
+            margin-right: 6px;
+        }
+
+        form {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 300px;
+            height: 250px;
+            margin: 0 auto;
+            padding: 50px 15px;
+            background: white;
+        }
+
+        #library {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            width: 100%;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .book-card {
+            border: 1px solid #ccc;
+            padding: 12px;
+            border-radius: 8px;
+            background: white;
+        }
