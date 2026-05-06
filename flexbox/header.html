@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: monospace;
+            background: papayawhip;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 900;
+            color: tomato;
+            background: white;
+            padding: 4px 32px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0 20px;
+            /* ul 預設padding 左側40px 為了可讀性  */
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        a {
+            font-size: 22px;
+            background: white;
+            padding: 8px;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="header">
+        <div class="left-link">
+            <ul>
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+            </ul>
+        </div>
+
+        <div class="logo">Logo</div>
+        <div class="right-link">
+            <ul>
+                <li><a href="#">Four</a></li>
+                <li><a href="#">Five</a></li>
+                <li><a href="#">Six</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
