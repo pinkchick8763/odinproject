@@ -1,0 +1,111 @@
+/*  https://web.dev/learn/design/typography
+    網站要令人心儀就需要有好的文字排版
+        #文字大小
+        #縮放文字
+        #文字箝制
+        #線長
+        #行高
+        #組合與規模 https://material.io/design/typography/the-type-system.html#type-scale
+        #網頁字體
+        #字體載入中
+        #可變字體
+*/
+
+/* 響應式文字大小 */
+@media (min-width: 30em) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media (min-width: 40em) {
+  html {
+    font-size: 150%;
+  }
+}
+
+@media (min-width: 50em) {
+  html {
+    font-size: 175%;
+  }
+}
+
+@media (min-width: 60em) {
+  html {
+    font-size: 200%;
+  }
+}
+
+
+/* 縮放文字 (不要單獨使用vw，雖然會隨視窗調整大小，但使用者無法自行調整)，應該使用calc 使使用者可自行調整大小 */
+html {
+  font-size: calc(0.75rem + 1.5vw);
+}
+
+/* 文字箝制 (使用clamp 設置三種尺寸防止文字過度縮小與過大) */
+html {
+  font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+}
+/*  一值為最小尺寸  二值與calc相同  三值為最大尺寸 */
+
+
+/* 線長 (根據印刷領域的經驗有了以下最佳實務) max-inline-size
+    對於單欄排版、襯線字體和標準字號的文本，
+    45 到 75 個字元的行長通常被認為是比較合適的。 
+    66 個字元（包括字母和空格）的行長則被普遍認為是理想的。
+    對於多欄排版，40 到 50 個字元的平均行長更為合適。
+*/
+/* CSS 無法直接控制行長，因此通過限制容器寬度來限制行長，但是不要使用絕對長度px，而要使用相對長度ch */
+
+/* 行高 line-height
+    CSS 設置line-height 控制較佳的閱讀體驗
+    !!!聲明時請使用無單位值line-height。這樣可以確保行高相對於行高而言是相對的font-size。
+*/
+article {
+  max-inline-size: 66ch;
+  line-height: 1.65;
+}
+blockquote {
+  max-inline-size: 45ch;
+  line-height: 2;
+}
+
+/* 文字字體
+    @font-face 告訴瀏覽器在哪裡查找您的網頁字體檔案
+    woff2 相容性較好，可以提升效能
+*/
+@font-face {
+  font-family: Roboto;
+  src: url('/fonts/roboto-regular.woff2') format('woff2');
+}
+body {
+  font-family: Roboto, sans-serif;
+}
+
+/* 字體載入中 
+    網頁載入文字字體需要時間，可以通過設置指定優先下載某種字體，也可以先行使用預設字體下載完後切換，各有優劣
+    rel的 preload 告訴瀏覽器優先下載該檔案
+    as的 font會告訴瀏覽器該檔案的類型
+    crossorigin 即使您自己託管字體文件，也需要包含該屬性
+*/
+/*
+    <link href="/fonts/roboto-regular.woff2" type="font/woff2" rel="preload" as="font" crossorigin>
+*/
+
+/* 文字替換方案 */
+/* 如果您仍然希望在 Web 字體最終載入時用 Web 字體取代系統字體，請使用font-display: swap */
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* 系統字體堆疊，增加使用者選取字體的機率 */
+  font-display: swap;
+}
+/* 如果希望在文字渲染後仍然使用系統字體，請使用font-display: fallback */
+/*body {
+  font-family: Roboto, sans-serif;
+  font-display: fallback;
+}*/
+
+
+/* 可變字體
+    響應式字體，使用單一文件規範了字體的所有尺寸該有的樣式，但是檔案會比常規字體要大，但是用多重字體的話單一可變字體效率更高
+*/

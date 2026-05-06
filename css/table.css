@@ -1,0 +1,54 @@
+html {
+    font-family: sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    /* border-collapse (table 邊線合併) 決定表格儲存格是共用一個合併的邊框，還是保持各自獨立的邊框，並在邊框之間留有間距 */
+    /* collapse (合併) 移除單元格之間的雙線 */
+    border: 2px solid rgb(200, 200, 200);
+    /* table 外框正方形畫線 */
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    /* table 內網格畫線 */
+    padding: 10px 20px;
+}
+
+th {
+    background-color: rgb(235, 235, 235);
+}
+
+td {
+    text-align: center;
+    /* 行內內容（Inline Content）的水平對齊方式 */
+}
+
+tr:nth-child(even) td {
+    background-color: rgb(250, 250, 250);
+}
+/* tr:nth-child(even) 選擇偶數 */
+
+tr:nth-child(odd) td {
+    background-color: rgb(245, 245, 245);
+}
+/* tr:nth-child(odd) 選擇奇數 */
+
+caption {
+    padding: 10px;
+}
+
+tbody {
+    font-size: 95%;
+    /* 一種細微的排版優化，旨在平衡表格的層次感和資訊密度 */
+    font-style: italic;
+    /* 斜體字 */
+}
+
+tfoot {
+    font-weight: bold;
+}

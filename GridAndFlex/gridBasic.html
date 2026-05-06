@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid basic</title>
+
+    <style>
+
+        body {
+            padding-top: 40px;
+            background: #f5f7f8;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+        }
+
+        .container div {
+            color: black;
+            font-size: 18px; 
+            padding: 20px;
+        }
+
+        .items {
+            background: skyblue;
+        }
+
+        .item {
+            background: skyblue;
+            height: 18px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+
+        <div class="items">7</div>
+        <div class="items">8</div>
+        <div class="items">9</div>
+
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <!-- div 擁有text content 才會配置height 否則為零，
+        可配置 height(絕對值) 強行提高 (相對值在auto 的情況下父元素沒有設置高度因此 : 0的0倍 等於0) -->
+
+    <a href="https://webdesign.tutsplus.com/css-grid-layout-quick-start-guide--cms-27238t">Grid basic</a>
+
+</body>
+</html>

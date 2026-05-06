@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG image</title>
+
+    <style>
+        svg {
+            border: 3px solid black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <rect x=0 y=0 width=100 height=100 fill="burlywood"/>
+        <path d="M 10 10 H 90 V 90 L 10 60" fill="transparent" stroke="black" stroke-width="3"/>
+        <circle cx=50 cy=50 r=20 class="svg-circle"/>
+        <g class="svg-text-group">
+        <text x="20" y="25" rotate="10" id="hello-text">Hello!</text>
+        <use href="#hello-text" x="-10" y="65" fill="white"/>
+        </g>
+    </svg> -->
+    
+
+    <div class="box">
+        <!-- 
+            xmlns="http://www.w3.org/2000/svg" ，.svg 一定要加上這個
+            現代瀏覽器通常可以省略，但加上 xmlns 是更標準、安全的寫法
+            通常只有獨立svg 檔會加上網址，因為必定失效
+        -->
+        <!-- svg : width, height : 框定svg 容器範圍 -->
+        <h2>Svg of circle and svg of ellipse</h2>
+        <div>
+            <svg width="300" height="300">
+                <circle fill="none" r="30" cx="50" cy="50" stroke="green" stroke-width="5" />
+                <ellipse fill="none" rx="30" ry="50" cx="150" cy="150" stroke="red" stroke-width="5" />
+            </svg>
+        </div>
+        <!-- circle : fill 內部顏色，r 半徑，cx, cy 左上角起點  -->
+        <!-- ellipse (橢圓) : rx, ry (x軸 y軸半徑)，cx, cy 左上角起點 -->
+
+        <h2>Svg of line</h2>
+        <div>
+            <svg width="200" height="200">
+                <line x1="80" y1="80" x2="200" y2="200" stroke="oklch(0.9 0.3 164)" stroke-width="5" />
+            </svg>
+        </div>
+        <!-- line : 繪製x1, y1 到x2, y2 的直線距離，stroke 顏色，stroke-width 線體粗細 -->
+
+        <h2>Svg of rect</h2>
+        <div>
+            <svg width="300" height="300">
+                <rect x="30" y="30" width="100" height="70" fill="none" stroke="oklch(0.9 0.3 164)" stroke-width="5" />
+            </svg>
+        </div>
+        <!-- rect (方形): x, y 指定左上角起點，width, height 指定方形四邊寬高，fill 內部顏色，stroke 線條顏色，stroke-width 線體粗細 -->
+        <!-- rect : 將width, height 其中之一變成0 並不會變成一條線，而是直接消失 -->
+
+        <!-- stroke-width 不同於border 他增加的距離為內外同時增加(兩倍) -->
+
+        <h2>Svg one of line of width or line of height is 0</h2>
+        <div>
+            <svg width="300", height="300">
+                <rect x="100" y="100" width="0" height="100" fill="pink" stroke="green" stroke-width="5" />
+            </svg>
+        </div>
+
+        <h2>Svg of rect of radius</h2>
+        <div>
+            <svg width="300" height="300">
+                <rect y="30" x="30" width="500" height="500" rx="50" ry="50" fill="none" stroke="green" stroke-width="5"/>
+            </svg>
+        </div>
+        <!-- rect圓角 : y, x 指定左上角起點，width, height 指定寬高，rx, ry 相對於x, y 指定圓角xy半徑 -->
+
+        <h2>Svg of polygon</h2>
+        <svg width="250" height="250">
+            <polygon points="
+                25,25
+                50,225
+                75,25
+                100,225
+                125,25
+                150,225 
+            " fill="none" stroke="green" stroke-width="5" />
+        </svg>
+        <!-- polygon 多邊形 指定無上限的座標點，點與點之間相連，最後一點與第一個點相連 -->
+
+
+        <!-- 建立正多邊形，需要三角函數 https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/ -->
+
+
+        <!-- 無限域 : svg 邊界可以無限延伸 -->
+        <!-- 使用viewBox 在視窗變化時，根據比例調整svg 的比例 -->
+        <!-- 
+            viewBox 包含四個值 分為兩組兩組一起的數組
+            第一組數組代表了 svg左上角的起點 (類似於 x, y)，固定svg 形狀的基準點，即svg 的視界範圍縮放之後依然等比的進行縮放，並且相對於width, height 依然是在原本的位置
+            第二組為 svg可視區大小 (類似於 width, height)，但不會改變svg 真正的大小而是根據svg 的width, height 為基準進行縮放處理
+        -->
+
+        <!-- 還有更多的svg 技術尚未探索 -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --text-color: #fff;
+    --bg-color: #f3eaea;
+    --bg-green: rgb(14, 97, 14);
+    --second-bg-green: rgb(9, 84, 9);
+}
+
+@font-face {
+    font-family: "Norse";
+    src: url("./JoelCarrouche/Norse.otf") format("opentype"),
+         url("./JoelCarrouche/Norsebold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.main-image-box {
+    position: relative;
+    display: flex;
+    width: 55%;
+    height: 100%;
+    /* height 100% 根據父元素縮放 */
+    background-image: url("../image/left-image.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url("../image/logo.png");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 25% 50%;
+    color: var(--text-color);
+    width: 100%;
+    height: 25%;
+}
+
+header h1 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    font-size: 120px;
+    font-family: "Norse", sans-serif;
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    color: var(--text-color);
+    z-index: 1;
+}
+
+footer a {
+    color: var(--text-color);
+}
+
+footer a:focus {
+    outline: none;
+    /* 消除用tab 對焦時的白框 */
+}
+
+.form-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 3% 0;
+    background-color: var(--bg-color);
+}
+
+.form-box article {
+    padding: 0 175px 55px 35px;
+}
+
+.form-box main {
+    padding: 0 175px 55px 35px;
+    background-color: var(--text-color);
+    box-shadow: 1px 3px 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+main h2 {
+    margin: 15px 0;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 將div-group 分成一行兩欄的格式 */
+    gap: 20px 40px; /* row / column 間距 */
+    max-width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* form-group 強制換行 */
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    /* 在input 內在文字外圍增加空白 */
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+#pw:invalid,
+#confirem:invalid {
+    border-color: red;
+}
+
+.form-box .account {
+    width: 200px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 7px;
+    margin: 50px 0 20px 30px;
+    font-size: 18px;
+    color: var(--text-color);
+    background-color: var(--bg-green);
+    cursor: pointer;
+}
+
+.form-box .account:hover {
+    background-color: var(--second-bg-green);
+}
+
+.form-box p {
+    font-size: 18px;
+    margin: 30px 0 20px 30px;
+}
+
+.form-box a {
+    text-decoration: none;
+    color: var(--bg-green);
+}

@@ -1,0 +1,83 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*  https://www.joshwcomeau.com/css/custom-css-reset/
+    這是一條必備規則。它能讓CSS的使用體驗大大提升。
+
+    <div width="200px">
+        <div width="100%">inner div</div>
+    </div>
+    父元素200px ，子元素擴展到100% 此時子元素將width 擴展到244px ( 200px(父) + 20*2(padding) + 2*2(border) )
+    如此狀態不合常理，因此box-sizing 可以將子元素溢出的邊長限制到與容器一樣
+    在此狀態下inner div 將會限制到156px ( 200px - 40px - 4px)
+*/
+
+*:not(dialog) {
+    margin: 0;
+}
+/*
+    移除預設邊距
+    需多元素都帶有預設邊距，方便html 元素清晰易讀，但是對於需要自行調整的網站設計會造成間距調整的影響
+    使用此樣式重置邊距，由自己自行調整
+
+    dialog 預設自帶margin: auto 將內容合理顯示在容器內，因此排除移除
+*/
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}        
+/*  啟用關鍵字動畫
+    interpolate-size 是一個比較新的 CSS 屬性，用來解決一個長期很麻煩的問題：
+    讓 width / height 在「auto」和「固定值」之間也能做動畫
+    沒有這個屬性動畫是沒用的 (瀏覽器不知道怎麼從 0px → auto 做平滑過渡)
+*/
+
+body {
+    line-height: 1.5;
+}
+/* 控制行與行之間的間距，通常預設為1.2，但1.5更舒服，可是對於heading 來說太大了 */
+
+body {
+-webkit-font-smoothing: antialiased;
+}
+/* 會關閉 次像素渲染（subpixel rendering），搭配高解析度螢幕
+    讓字體看起來更細、更銳利（但有時也更淡），而次像素渲染 讓字體「更清晰」
+*/
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/* 
+    img 預設為行內元素，但是行內元素有個神奇的4px 空間line-height，設為block 可以消除神秘空間
+    並且將圖片限制在100% ，使圖片不會超過容器，變為可預期行為，但100%以上的設置將不會套用
+*/
+
+input, button, textarea, select {
+    font: inherit;
+}
+/* 為表單控制項繼承字型
+    這些元素預設不會繼承父元素字體，使使用者體驗下降，啟動這個屬性吧
+*/
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*  避免文字溢出
+    預設溢出容器會進行軟換行，但是某些情狀下無法執行包括URL ，這時就使用應換行強行佈局
+*/
+
+/*  text-wrap : pretty
+        確保文字的最後一行至少包含兩個單字
+    text-wrap : balance
+        盡量使每行文字的長度大致相同
+/* 改進換行 */
+
+#root, #__next {
+    isolation: isolate;
+}
+/* 根堆疊上下文
+    避免z-index 屬性的元素遮擋我們始終想要呈現在最上方的元素
+*/

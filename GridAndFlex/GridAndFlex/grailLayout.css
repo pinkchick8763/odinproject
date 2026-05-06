@@ -1,0 +1,190 @@
+body, 
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(2, 1fr) 5fr 1fr;
+    gap: 15px;
+
+    text-align: center;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.container div {
+    padding: 15px;
+    font-size: 32px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+}
+
+.header {
+    grid-column: 1 / 3;
+
+    background-color: #006157;
+}
+
+.sidebar {
+    grid-row: 2 / 4;
+
+    background-color: #005B94;
+}
+
+.nav {
+    grid-column-start: 2;
+
+    background-color: #642cde;
+}
+
+.article {
+    grid-column-start: 2;
+
+    background-color: #7E1DC3;
+}
+
+.footer {
+    grid-column: 1 / 3;
+
+    background-color: #393f4d;
+}
+
+.article p {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    text-align: left;
+}
+
+/* first version */
+/* * {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --text-white: #fff;
+    --radius-length: 7px;
+}
+
+body {
+    padding: 20px;
+}
+
+.grail-grid {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 12.5% 12.5% 62.5% 12.5%;
+
+        網格有四行，第三排的面積是其他排的五倍。
+        其他排為x ，第三排為5x
+        x + x + 5x + x = 8x
+        8x / 100% = 12.5%
+    
+    gap: 15px;
+    padding: 10%;
+}
+
+header {
+    grid-column: 1 / 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    border: none;
+    border-radius: var(--radius-length);
+    background: green;
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 600;
+}
+
+nav {
+    grid-column-start: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    border: none;
+    border-radius: var(--radius-length);
+    background: purple;
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 600;
+}
+
+article {
+    grid-column-start: 2;
+
+    display: inline-block;
+    justify-content: center;
+    align-items: flex-start;
+
+    border: none;
+    border-radius: var(--radius-length);
+    background: rgba(189, 30, 189, 0.747);
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 600;
+}
+
+article h2 {
+    margin: 0;
+}
+
+article p {
+    margin: 16px 10px;
+}
+
+aside {
+    grid-column-start: 1;
+    grid-row: 2 / 4;
+
+    display: inline-block;
+    justify-content: center;
+    align-items: flex-start;
+
+    border: none;
+    border-radius: var(--radius-length);
+    background: rgb(23, 92, 184);
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 600;
+}
+
+aside h2 {
+    margin-top: 5px;
+}
+
+footer {
+    grid-column: 1 / 3;
+
+    display: inline-block;
+    justify-content: center;
+    align-items: flex-start;
+
+    border: none;
+    border-radius: var(--radius-length);
+    background: #474646;
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+footer h2 {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+}
+
+h2 {
+    padding-top: 8px;
+} */

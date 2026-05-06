@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/table.css">
+    <title>Table Advanced</title>
+</head>
+<body>
+
+    <h1>School language timetable</h1>
+
+    <table>
+        <caption>
+            St. Winnifred's weekly language lesson timetable
+        </caption>
+
+        <colgroup>
+            <col span="2" />
+            <col class="column-background" />
+            <col class="column-fixed-width" />
+            <col class="column-background" />
+            <col class="column-background-border" />
+            <col span="2" class="column-fixed-width" />
+        </colgroup>
+
+        <tr>
+            <td>&nbsp;</td>
+            <th>Mon</th>
+            <th>Tues</th>
+            <th>Wed</th>
+            <th>Thurs</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+        <tr>
+            <th>1st period</th>
+            <td>English</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>2nd period</th>
+            <td>English</td>
+            <td>English</td>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>3rd period</th>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>4th period</th>
+            <td>&nbsp;</td>
+            <td>English</td>
+            <td>&nbsp;</td>
+            <td>English</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    
+    <h1>My spending record</h1>
+
+    <table>
+        <thead>
+            <caption>
+                How I chose to spend my money
+            </caption>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Purchase</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Evaluation</th>
+                <th>Cost (€)</th>
+            </tr>
+            <tr>
+                <td>Haircut</td>
+                <td>Hairdresser</td>
+                <td>12/09</td>
+                <td>Great idea</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Lasagna</td>
+                <td>Restaurant</td>
+                <td>12/09</td>
+                <td>Regrets</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Shoes</td>
+                <td>Shoe shop</td>
+                <td>13/09</td>
+                <td>Big regrets</td>
+                <td>65</td>
+            </tr>
+            <tr>
+                <td>Toothpaste</td>
+                <td>Supermarket</td>
+                <td>13/09</td>
+                <td>Good</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="4">SUM</td>
+                <!-- colspan 跨四列 -->
+                <td>118</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h1>Table id and headers (替代scope)</h1>
+    <!-- 使用 id 和 headers 屬性來建立資料儲存格與表頭儲存格之間的關聯，替代scope 屬性
+    但會使用大量的標記，並且不允許出現任何錯誤。scope對於大多數表格來說，這種方法通常已經足夠了。 -->
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th id="clothes" colspan="3">Clothes</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th id="trousers" headers="clothes">Trousers</th>
+                <th id="skirts" headers="clothes">Skirts</th>
+                <th id="dresses" headers="clothes">Dresses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="belgium" rowspan="2">Belgium</th>
+                <th id="antwerp" headers="belgium">Antwerp</th>
+                <td headers="belgium antwerp clothes trousers">56</td>
+                <td headers="belgium antwerp clothes skirts">22</td>
+                <td headers="belgium antwerp clothes dresses">43</td>
+            </tr>
+            <tr>
+                <th id="ghent" headers="belgium">Ghent</th>
+                <td headers="belgium ghent clothes trousers">41</td>
+                <td headers="belgium ghent clothes skirts">17</td>
+                <td headers="belgium ghent clothes dresses">35</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Items sold summary with Scope</h1>
+
+    <table>
+      <caption>Items Sold August 2016</caption>
+      <thead>
+        <tr>
+          <td colspan="2" rowspan="2"></td>
+          <th colspan="3" scope="colgroup">Clothes</th>
+          <th colspan="2" scope="colgroup">Accessories</th>
+        </tr>
+        <tr>
+          <th scope="col">Trousers</th>
+          <th scope="col">Skirts</th>
+          <th scope="col">Dresses</th>
+          <th scope="col">Bracelets</th>
+          <th scope="col">Rings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="3" scope="rowgroup">Belgium</th>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>22</td>
+          <td>43</td>
+          <td>72</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <th scope="row">Ghent</th>
+          <td>46</td>
+          <td>18</td>
+          <td>50</td>
+          <td>61</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <th scope="row">Brussels</th>
+          <td>51</td>
+          <td>27</td>
+          <td>38</td>
+          <td>69</td>
+          <td>28</td>
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">The Netherlands</th>
+          <th scope="row">Amsterdam</th>
+          <td>89</td>
+          <td>34</td>
+          <td>69</td>
+          <td>85</td>
+          <td>38</td>
+        </tr>
+        <tr>
+          <th scope="row">Utrecht</th>
+          <td>80</td>
+          <td>12</td>
+          <td>43</td>
+          <td>36</td>
+          <td>19</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Items sold summary with ID and Headers</h1>
+
+    <table>
+      <caption>Items Sold August 2016</caption>
+      <thead>
+        <tr>
+          <td colspan="2" rowspan="2"></td>
+          <th colspan="3" id="clothes">Clothes</th>
+          <th colspan="2" id="accessories">Accessories</th>
+        </tr>
+        <tr>
+          <th id="trousers" headers="clothes">Trousers</th>
+          <th id="skirts" headers="clothes">Skirts</th>
+          <th id="dresses" headers="clothes">Dresses</th>
+          <th id="bracelets" headers="accessories">Bracelets</th>
+          <th id="rings" headers="accessories">Rings</th>
+          <!-- 每一層的headers 與上面每一層的id 會有所關聯(越疊越多) -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="3" id="belgium">Belgium</th>
+          <th scope="row" id="antwerp">Antwerp</th>
+          <td headers="belgium antwerp trousers clothes">56</td>
+          <td headers="antwerp belgium clothes skirts">22</td>
+          <td headers="antwerp belgium clothes dresses">43</td>
+          <td headers="antwerp belgium accessories bracelets">72</td>
+          <td headers="antwerp belgium accessories rings">23</td>
+          <!-- 每一層的headers 與上面每一層的id 會有所關聯(越疊越多) -->
+        </tr>
+        <tr>
+          <th scope="row" id="ghent">Ghent</th>
+          <td headers="ghent belgium clothes trousers">46</td>
+          <td headers="ghent belgium clothes skirts">18</td>
+          <td headers="ghent belgium clothes dresses">50</td>
+          <td headers="ghent belgium accessories bracelets">61</td>
+          <td headers="ghent belgium accessories rings">15</td>
+          <!-- 每一層的headers 與上面每一層的id 會有所關聯(越疊越多) -->
+        </tr>
+        <tr>
+          <th scope="row">Brussels</th>
+          <td headers="brussels belgium clothes trousers">51</td>
+          <td headers="brussels belgium clothes skirts">27</td>
+          <td headers="brussels belgium clothes dresses">38</td>
+          <td headers="brussels belgium accessories bracelets">69</td>
+          <td headers="brussels belgium accessories rings">28</td>
+          <!-- 每一層的headers 與上面每一層的id 會有所關聯(越疊越多) -->
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">The Netherlands</th>
+          <th scope="row">Amsterdam</th>
+          <td headers="amsterdam netherlands clothes trousers">89</td>
+          <td headers="amsterdam netherlands clothes skirts">34</td>
+          <td headers="amsterdam netherlands clothes dresses">69</td>
+          <td headers="amsterdam netherlands accessories bracelets">85</td>
+          <td headers="amsterdam netherlands accessories rings">38</td>
+          <!-- 每一層的headers 與上面每一層的id 會有所關聯(越疊越多) -->
+        </tr>
+        <tr>
+          <th scope="row">Utrecht</th>
+          <td headers="utrecht netherlands clothes trousers">80</td>
+          <td headers="utrecht netherlands clothes skirts">12</td>
+          <td headers="utrecht netherlands clothes dresses">43</td>
+          <td headers="utrecht netherlands accessories bracelets">36</td>
+          <td headers="utrecht netherlands accessories rings">19</td>
+          <!-- 每一層的headers 與上面每一層的id 會有所關聯(越疊越多) -->
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Planet data table</h1>
+
+    <table>
+        <caption>
+            Data about the planets of our solar system (Planetary facts taken from
+            <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/"
+            >Nasa's Planetary Fact Sheet - Metric</a
+            >).
+        </caption>
+        <colgroup>
+            <col span="2" />
+            <col class="column-border" />
+            <col span="9" />
+        </colgroup>
+        <thead>
+            <tr>
+                <td colspan="2"></td>
+                <th scope="col">Name</th>
+                <th scope="col">Mass (10<sup>24</sup>kg)</th>
+                <th scope="col">Diameter (km)</th>
+                <th scope="col">Density (kg/m<sup>3</sup>)</th>
+                <th scope="col">Gravity (m/s<sup>2</sup>)</th>
+                <th scope="col">Length of day (hours)</th>
+                <th scope="col">Distance from Sun (10<sup>6</sup>km)</th>
+                <th scope="col">Mean temperature (°C)</th>
+                <th scope="col">Number of moons</th>
+                <th scope="col">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th rowspan="4" colspan="2" scope="rowgroup">Terrestrial planets</th>
+                <th scope="row">Mercury</th>
+                <td>0.330</td>
+                <td>4,879</td>
+                <td>5427</td>
+                <td>3.7</td>
+                <td>4222.6</td>
+                <td>57.9</td>
+                <td>167</td>
+                <td>0</td>
+                <td>Closest to the Sun</td>
+            </tr>
+            <tr>
+                <th scope="row">Venus</th>
+                <td>4.87</td>
+                <td>12,104</td>
+                <td>5243</td>
+                <td>8.9</td>
+                <td>2802.0</td>
+                <td>108.2</td>
+                <td>464</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Earth</th>
+                <td>5.97</td>
+                <td>12,756</td>
+                <td>5514</td>
+                <td>9.8</td>
+                <td>24.0</td>
+                <td>149.6</td>
+                <td>15</td>
+                <td>1</td>
+                <td>Our world</td>
+            </tr>
+            <tr>
+                <th scope="row">Mars</th>
+                <td>0.642</td>
+                <td>6,792</td>
+                <td>3933</td>
+                <td>3.7</td>
+                <td>24.7</td>
+                <td>227.9</td>
+                <td>-65</td>
+                <td>2</td>
+                <td>The red planet</td>
+            </tr>
+            <tr>
+                <th rowspan="4" scope="rowgroup">Jovian planets</th>
+                <th rowspan="2" scope="rowgroup">Gas giants</th>
+                <th scope="row">Jupiter</th>
+                <td>1898</td>
+                <td>142,984</td>
+                <td>1326</td>
+                <td>23.1</td>
+                <td>9.9</td>
+                <td>778.6</td>
+                <td>-110</td>
+                <td>67</td>
+                <td>The largest planet</td>
+            </tr>
+            <tr>
+                <th scope="row">Saturn</th>
+                <td>568</td>
+                <td>120,536</td>
+                <td>687</td>
+                <td>9.0</td>
+                <td>10.7</td>
+                <td>1433.5</td>
+                <td>-140</td>
+                <td>62</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th rowspan="2" scope="rowgroup">Ice giants</th>
+                <th scope="row">Uranus</th>
+                <td>86.8</td>
+                <td>51,118</td>
+                <td>1271</td>
+                <td>8.7</td>
+                <td>17.2</td>
+                <td>2872.5</td>
+                <td>-195</td>
+                <td>27</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Neptune</th>
+                <td>102</td>
+                <td>49,528</td>
+                <td>1638</td>
+                <td>11.0</td>
+                <td>16.1</td>
+                <td>4495.1</td>
+                <td>-200</td>
+                <td>14</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2" scope="rowgroup">Dwarf planets</th>
+                <th scope="row">Pluto</th>
+                <td>0.0146</td>
+                <td>2,370</td>
+                <td>2095</td>
+                <td>0.7</td>
+                <td>153.3</td>
+                <td>5906.4</td>
+                <td>-225</td>
+                <td>5</td>
+                <td>
+                    Declassified as a planet in 2006, but this
+                    <a
+                    href="https://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-system/16578959/"
+                    >remains controversial</a
+                    >.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
