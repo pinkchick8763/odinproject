@@ -20,6 +20,10 @@ body {
     width: 480px;
     border-radius: 10px;
     box-shadow: 2px 4px 16px rgba(0, 0, 0, .2);
+
+    display: flex;
+    gap: 15px;
+    padding: 15px;
 }
 
 .icon {
@@ -33,6 +37,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex: 1 0 42px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.title h3 {
+    margin: 0;
+    font-size: 20px;
+    /* 消除header 3 預設margin */
 }
 
 .close-button {

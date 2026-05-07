@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+}
+
+header {
+    flex: 0;
+    background: purple;
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    padding: 16px;
+}
+
+.container {
+    flex: 1;
+
+    display: flex;
+    gap: 15px;
+}
+
+.sidebar {
+    flex: 1 0 300px;
+    background: skyblue;
+    width: 20vw;
+    padding: 16px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 50px;
+}
+
+.card {
+    flex: 1 0 300px;
+    background: white;
+    padding: 12px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .2);
+}
+
+.footer {
+    flex: 0;
+    background: #eeeeee;
+    color: purple;
+    text-align: center;
+    padding: 16px;
+}
+
