@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    background: grey;
+    padding: 30px;
+}
+
+button {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: skyblue;
+}
+
+.pix {
+    flex: 1 0 16px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+}
+
+.drawboard {
+    display: flex;
+    flex-wrap: wrap;
+
+    background: firebrick;
+    width: 320px;
+    height: 320px;
+}
+
+.top {
+    background: grey;
+}
+

@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: grey;
+}
+
+.container {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+}
+
+.elementStyle {
+    background: darkblue;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+
+.btn-hover:hover {
+    background: rgb(0, 0, 183);
+}
+
+#move {
+    background: blue;
+    width : 400px;
+    height: 300px;
+}
+
+#outputKey {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+p {
+    color: white;
+    font-size: 22px;
+}

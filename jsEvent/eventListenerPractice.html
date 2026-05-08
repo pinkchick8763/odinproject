@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Practice</title>
+    <link rel="stylesheet" href="eventListenerPractice.css">
+</head>
+<body>
+    
+    <h2>Java Script Event</h2>
+    <div class="container">
+        <button id="btn" class="elementStyle btn-hover">Click me!</button>
+        <a id="prevent" class="elementStyle btn-hover" href="https://www.javascripttutorial.net/javascript-dom/javascript-events/">阻止預設事件</a>
+        <button id="stopBubbling" class="elementStyle btn-hover">prevent bubbling</button>
+    </div>
+
+    <h2>Mouse Event</h2>
+    <div class="container">
+        <div>
+            <button id="mouse-btn" class="elementStyle btn-hover">Mouse action</button>
+            <p id="mouse-msg"></p>
+        </div>
+        <div>
+            <button id="key-btn" class="elementStyle btn-hover">修飾鍵</button>
+            <p id="key-msg"></p>
+        </div>
+        <div id="move"></div>
+        <p id="pointer"></p>
+    </div>
+
+    <h2>Keyboard Event</h2>
+    <div class="container keyboard">
+        <div>
+            <input type="text" id="key">
+        </div>
+        <div id="outputKey">
+            <p id="downkey"></p>
+            <p id="presskey"></p>
+            <p id="upkey"></p>
+        </div>
+    </div>
+
+    <h2>事件委託 利用bubbling 特性 提高效能</h2>
+    <div class="container">
+        <div id="menu" class="container">
+            <p><a href="#" id="home" class="elementStyle btn-hover">Home</a></p>
+            <p><a href="#" id="about" class="elementStyle btn-hover">About</a></p>
+            <p><a href="#" id="contact" class="elementStyle btn-hover">Contact</a></p>
+        </div>
+    </div>
+
+    <script src="eventListenerPractice.js"></script>
+
+</body>
+</html>
