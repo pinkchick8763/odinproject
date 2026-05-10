@@ -1,0 +1,42 @@
+Connect Four Game practice
+from https://www.ayweb.dev/blog/building-a-house-from-the-inside-out
+
+Rules :
+    1. 棋盤擁有重力 (所以下子只能由下到上，不能浮空)
+    2. 棋盤只有 6 * 7 的空間
+    3. 先行連成 4子一線的玩家勝利，不管直線、斜線
+    (來自蘇聯的遊戲)
+
+function :
+    1. Gameboard 創建初始棋盤
+        getBoard 獲取棋盤範圍
+        dropToken 下子位置 與 填入玩家值
+            availableCells 獲取可用格
+            lowestRow 指定該行的下子位
+        printBoard 更新棋盤現況
+            boardWithCellValues 創建各個棋盤格的值
+    2. Cell 指定下子的位置 及 獲取下子的玩家值
+        addToken 加入玩家值
+        getValue 獲取玩家值
+    3. GameController 控制回合、下子位置
+        constructor
+            board 創建初始棋盤
+            players 限制玩家名稱 和玩家棋子所屬值
+            activePlayer 這回合的下子玩家
+        switchPlayerTurn 切換回合
+        getActivePlayer 獲取當前回合玩家集合
+        printNewRound 更新棋盤 和列印訊息
+        playRound 下子 和列印訊息
+
+
+
+Game board[6][7] : (棋盤範圍)
+      1 2 3 4 5 6 7
+    1
+    2
+    3
+    4
+    5
+    6
+    
+    tips: 棋盤下子都從 board[row].length - 1 開始
