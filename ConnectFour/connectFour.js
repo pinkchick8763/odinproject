@@ -120,7 +120,58 @@ function GameController(playOneName = "Player One", playTwoName = "Player Two") 
     // Initialize
     printNewRound();
 
-    return {getActivePlayer, playRound};
+    return {getActivePlayer, playRound, getBoard: board.getBoard};
 }
 
-const game = GameController();
+// test
+// const game = GameController();
+
+// update the screnn when player click the board
+function ScreenController() {
+    const game = GameController();
+    const playerTurnDiv = document.querySelector('.turn');
+    const boardDiv = document.querySelector('.board');
+
+    const updateScreen = function() {
+        // clean the board
+        boardDiv.textContent = '';
+
+        const board = game.getBoard();
+        const activePlayer = game.getActivePlayer();
+
+        playerTurnDiv.textContent = `${activePlayer.name}'s turn.`;
+
+        board.forEach(function(row) {
+            // 第12行建立了 board[i].push(Cell());
+            row.forEach(function(cell, index) {
+                // 單元格是按鈕，而不是div元素。為什麼？在大多數情況下，任何可點擊的內容都應該是按鈕或連結。這樣，有行動不便的用戶仍然可以透過鍵盤上的Tab鍵和選擇鍵輕鬆使用我們的網站。
+                const cellButton = document.createElement('button');
+                cellButton.classList.add('cell');
+
+                // 賦予button data-column 自訂屬性，用於視覺沒有的額外訊息
+                // dataset 賦予後顯示為 data-xxx 的形式
+                // tips dataset.indexNumber 到html會以這種格式呈現 : data-index-number
+                // 為每個board row 的column 賦予0 ~ 6 的index
+                cellButton.dataset.column = index;
+                // 第12行建立了 board[i].push(Cell()); 這裡的cell 就是Cell()，所以可以呼叫Cell()裡的getValue方法
+                cellButton.textContent = cell.getValue();
+                boardDiv.appendChild(cellButton);
+            });
+        });
+    };
+
+    function clickHandlerBoard(e) {
+        const selectedColumn = e.target.dataset.column;
+        
+        // 如果點擊的不是button 或者 沒有data-column屬性，則不執行任何操作
+        if (!selectedColumn) return;
+
+        game.playRound(selectedColumn);
+        updateScreen();
+    }
+    boardDiv.addEventListener('click', clickHandlerBoard);
+
+    updateScreen();
+}
+
+ScreenController();

@@ -20,3 +20,7 @@ Etch-a-Sketch
 1. pracitce addEventListener (在loop 中使用)
 2. create HTML in JavaScript
 3. flex-wrap practice
+
+Connect Four (蘇聯四子連子)
+1. practice javascript Object
+2. user interface and background function working

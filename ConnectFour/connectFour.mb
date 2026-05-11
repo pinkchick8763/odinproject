@@ -27,6 +27,9 @@ function :
         getActivePlayer 獲取當前回合玩家集合
         printNewRound 更新棋盤 和列印訊息
         playRound 下子 和列印訊息
+    4. ScreenController 更新畫面
+        updateScreen 每次點擊刷新畫面、更新步數、建立棋盤html
+        clickHandlerBoard 點擊事件
 
 
 
