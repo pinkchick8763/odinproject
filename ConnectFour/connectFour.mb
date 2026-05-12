@@ -15,6 +15,7 @@ function :
             lowestRow 指定該行的下子位
         printBoard 更新棋盤現況
             boardWithCellValues 創建各個棋盤格的值
+        getWithBoardValues 取得目前全部棋盤值，供判斷勝負
     2. Cell 指定下子的位置 及 獲取下子的玩家值
         addToken 加入玩家值
         getValue 獲取玩家值
@@ -27,6 +28,8 @@ function :
         getActivePlayer 獲取當前回合玩家集合
         printNewRound 更新棋盤 和列印訊息
         playRound 下子 和列印訊息
+        checkWin 判斷勝負
+        checkTie 平手
     4. ScreenController 更新畫面
         updateScreen 每次點擊刷新畫面、更新步數、建立棋盤html
         clickHandlerBoard 點擊事件

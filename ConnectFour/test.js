@@ -124,14 +124,18 @@ function GameController(playOneName = "Player One", playTwoName = "Player Two") 
         board.dropToken(column, getActivePlayer().token);
 
         if (checkWin()) {
+            const resultBox = document.querySelector(".result-box");
             board.printBoard();
-            resultMsg.textContent = `Player ${getActivePlayer().name} is winner.`;
+            resultMsg.textContent = `${getActivePlayer().name} is winner.`;
+            resultBox.classList.add("active");
             return;
         }
 
         if (checkTie()) {
+            const resultBox = document.querySelector(".result-box");
             board.printBoard();
             resultMsg.textContent = `It's a tie`;
+            resultBox.classList.add("active");
             return;
         }
 
@@ -139,7 +143,7 @@ function GameController(playOneName = "Player One", playTwoName = "Player Two") 
         printNewRound();
     };
 
-        const checkWin = function() {
+    const checkWin = function() {
         const boardValue = board.getWithBoardValues();
 
         const rows = 6;
@@ -217,17 +221,26 @@ function ScreenController(playerOneName, playerTwoName) {
     const playerTurnDiv = document.querySelector('.turn');
     const boardDiv = document.querySelector('.board');
     const startBtn = document.querySelector('.start-btn');
+    const restartBtn = document.querySelector('.restart-btn');
 
     startBtn.addEventListener("click", function() {
         const oneName = document.querySelector("#play1");
         const twoName = document.querySelector("#play2");
+        const info = document.querySelector(".play-information");
 
-        startBtn.disabled = true;
+        info.classList.add("active");
 
         ScreenController(
             oneName.value || "PlayerOne", 
             twoName.value || "PlayerTwo"
         );
+    });
+
+    restartBtn.addEventListener("click", function() {
+        const resultBox = document.querySelector(".result-box");
+        resultBox.classList.remove("active");
+        // ScreenController 不能直接使用ScreenController 會變成多個 GameController 同時存在
+        // ScreenController(playerOneName, playerTwoName);
     });
     
     const updateScreen = function() {
